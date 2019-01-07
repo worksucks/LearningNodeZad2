@@ -1,6 +1,8 @@
 
+//var os1 = require('os')
 
 function time_conv(sec) {
+  //var sec =os1.uptime();
   var hours = Math.floor(sec/3600);
   var minutes = Math.floor((sec % 3600) / 60);
   var seconds = Math.floor((sec % 3600) % 60);
@@ -10,4 +12,4 @@ function time_conv(sec) {
   console.log(seconds);
 }
 
-exports.time = time_conv;
+exports.time = time_conv();
