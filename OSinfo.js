@@ -1,6 +1,6 @@
 var os = require('os');
 var colors = require('colors');
-var time = require('./time');
+var conv = require('./time');
 
 function getOSinfo() {
     var type = os.type();
@@ -13,11 +13,12 @@ function getOSinfo() {
     var cpu = os.cpus()[0].model;
     var uptime = os.uptime();
     var userInfo = os.userInfo();
-    var czas = time.time_conv(uptime);
+    var czas = conv.time(uptime);
+    //var czas = time.time(uptime);
     console.log('System:'.grey, type);
     console.log('Release:'.red, release);
     console.log('CPU model:'.blue, cpu);
-    console.log('Uptime: ~'.green, uptime);
+    console.log('Uptime: ~'.green, czas);
     console.log('User name:'.yellow, userInfo.username);
     console.log('Home dir:', userInfo.homedir);
 }
